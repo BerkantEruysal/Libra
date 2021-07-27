@@ -13,6 +13,7 @@ function addBookToLibrary(title, author, pages, read) {
   myLibrary.push(newBook);
 }
 function initBook(bookObject) {
+  
   const book = document.createElement("div");
   const deleteButton = document.createElement("button");
   const ul = document.createElement("ul");
@@ -38,6 +39,7 @@ function initBook(bookObject) {
   }`;
 
   book.addEventListener("transitionend", (event) => {
+    refreshIds()
     book.remove();
     myLibrary.splice(bookObject.id, 1);
     saveList();
@@ -70,6 +72,7 @@ function submitBookForm() {
   if (title && author && pages) {
     addBookToLibrary(title, author, pages, isRead);
     saveList();
+    refreshIds();
     refreshList();
     closeForm();
 
@@ -96,12 +99,8 @@ function saveList() {
 function loadList() {
   JSON.parse(localStorage.getItem("library")) != null;
   myLibrary = JSON.parse(localStorage.getItem("library"));
-  let idCounter = 0;
-  myLibrary.forEach((book) => {
-    book.id = idCounter;
-    idCounter++;
-  });
-
+  
+  refreshIds()
   refreshList();
 }
 function updateNoBookText() {
@@ -111,6 +110,14 @@ function updateNoBookText() {
     return;
   }
   noBookText.className = "visible";
+}
+function refreshIds(){
+  let idCounter = 0;
+  myLibrary.forEach((book) => {
+    console.log(idCounter)
+    book.id = idCounter;
+    idCounter++;
+  });
 }
 
 // Loads the local storage if it's exists
