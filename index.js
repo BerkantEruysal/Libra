@@ -13,7 +13,6 @@ function addBookToLibrary(title, author, pages, read) {
   myLibrary.push(newBook);
 }
 function initBook(bookObject) {
-  
   const book = document.createElement("div");
   const deleteButton = document.createElement("button");
   const ul = document.createElement("ul");
@@ -39,7 +38,7 @@ function initBook(bookObject) {
   }`;
 
   book.addEventListener("transitionend", (event) => {
-    refreshIds()
+    refreshIds();
     book.remove();
     myLibrary.splice(bookObject.id, 1);
     saveList();
@@ -99,8 +98,8 @@ function saveList() {
 function loadList() {
   JSON.parse(localStorage.getItem("library")) != null;
   myLibrary = JSON.parse(localStorage.getItem("library"));
-  
-  refreshIds()
+
+  refreshIds();
   refreshList();
 }
 function updateNoBookText() {
@@ -111,10 +110,9 @@ function updateNoBookText() {
   }
   noBookText.className = "visible";
 }
-function refreshIds(){
+function refreshIds() {
   let idCounter = 0;
   myLibrary.forEach((book) => {
-    console.log(idCounter)
     book.id = idCounter;
     idCounter++;
   });
