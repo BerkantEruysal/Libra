@@ -27,7 +27,7 @@ function initBook(bookObject) {
   pages.className = "book-pages";
   isRead.className = "book-is-read";
   
-  trashCanIcon.src = "icons8-trash-24.png"
+  trashCanIcon.src = "./Icons/icons8-trash-24.png"
   title.innerHTML = `${bookObject.title}`;
   author.innerHTML = `${bookObject.author}`;
   pages.innerHTML = `${bookObject.pages}`;
