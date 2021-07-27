@@ -7,7 +7,9 @@ function Book(title, author, pages, read) {
 }
 function addBookToLibrary(title, author, pages, read) {
   const newBook = new Book(title, author, pages, read);
-  if(!myLibrary){myLibrary = []}
+  if (!myLibrary) {
+    myLibrary = [];
+  }
   myLibrary.push(newBook);
 }
 function initBook(bookObject) {
@@ -18,7 +20,7 @@ function initBook(bookObject) {
   const author = document.createElement("li");
   const pages = document.createElement("li");
   const isRead = document.createElement("li");
-  const trashCanIcon = document.createElement("img")
+  const trashCanIcon = document.createElement("img");
 
   book.className = "book";
   deleteButton.className = "book-delete-button";
@@ -26,8 +28,8 @@ function initBook(bookObject) {
   author.className = "book-author";
   pages.className = "book-pages";
   isRead.className = "book-is-read";
-  
-  trashCanIcon.src = "./Icons/icons8-trash-24.png"
+
+  trashCanIcon.src = "./Icons/icons8-trash-24.png";
   title.innerHTML = `${bookObject.title}`;
   author.innerHTML = `${bookObject.author}`;
   pages.innerHTML = `${bookObject.pages}`;
@@ -39,12 +41,13 @@ function initBook(bookObject) {
     book.remove();
     myLibrary.splice(bookObject.id, 1);
     saveList();
+    refreshList();
   });
   deleteButton.addEventListener("click", () => {
     book.classList.add("remove-effect");
   });
 
-  deleteButton.appendChild(trashCanIcon)
+  deleteButton.appendChild(trashCanIcon);
   ul.appendChild(deleteButton);
   ul.appendChild(title);
   ul.appendChild(author);
@@ -80,6 +83,7 @@ function closeForm() {
 }
 function refreshList() {
   document.getElementById("list").innerHTML = "";
+  updateNoBookText();
   if (myLibrary) {
     myLibrary.forEach((book) => {
       initBook(book);
@@ -90,28 +94,29 @@ function saveList() {
   localStorage.setItem("library", JSON.stringify(myLibrary));
 }
 function loadList() {
-  
-   JSON.parse(localStorage.getItem("library")) != null 
-    myLibrary = JSON.parse(localStorage.getItem("library"));
-    let idCounter = 0;
-    myLibrary.forEach((book) => {
-      book.id = idCounter;
-      idCounter++;
-    });
-    
-  
-  
-  refreshList()
+  JSON.parse(localStorage.getItem("library")) != null;
+  myLibrary = JSON.parse(localStorage.getItem("library"));
+  let idCounter = 0;
+  myLibrary.forEach((book) => {
+    book.id = idCounter;
+    idCounter++;
+  });
+
+  refreshList();
+}
+function updateNoBookText() {
+  const noBookText = document.getElementById("no-book");
+  if (myLibrary.length > 0) {
+    noBookText.className = "unvisible";
+    return;
+  }
+  noBookText.className = "visible";
 }
 
 // Loads the local storage if it's exists
 loadList();
 
-
 // Prevents the create book button from refreshing the page
 document.getElementById("create-button").addEventListener("click", (event) => {
   event.preventDefault();
 });
-
-
-

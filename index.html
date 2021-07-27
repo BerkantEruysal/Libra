@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <link rel="stylesheet" href="./style.css" />
-    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
   </head>
   <body>
     <header><p>LIBRA</p></header>
@@ -20,13 +20,37 @@
             onclick="closeForm()"
           />
           <label for="title-input" class="title-label label">Title:</label>
-          <input type="text" id="title-input" name="title-input" class="input" />
+          <input
+            type="text"
+            id="title-input"
+            name="title-input"
+            class="input"
+          />
           <label for="author-input" class="author-label label">Author:</label>
-          <input type="text" id="author-input" name="author-input" class="input" />
-          <label for="pages-input" class="pages-label label"><p>Total Pages:</p></label>
-          <input type="number" id="pages-input" name="pages-input" class="input" />
-          <label for="is-read-input" class="is-read-label label">Finished ? </label>
-          <input type="checkbox" id="is-read-input" name="is-read-input" class="input" />
+          <input
+            type="text"
+            id="author-input"
+            name="author-input"
+            class="input"
+          />
+          <label for="pages-input" class="pages-label label"
+            ><p>Total Pages:</p></label
+          >
+          <input
+            type="number"
+            id="pages-input"
+            name="pages-input"
+            class="input"
+          />
+          <label for="is-read-input" class="is-read-label label"
+            >Finished ?
+          </label>
+          <input
+            type="checkbox"
+            id="is-read-input"
+            name="is-read-input"
+            class="input"
+          />
           <span class="checkmark"></span>
           <button
             id="create-button"
@@ -48,11 +72,14 @@
         <p>+</p>
       </button>
       <div class="tables">
-        <p> </p>
+        <p></p>
         <p>Title</p>
         <p>Author</p>
         <p>Pages</p>
         <p>Status</p>
+      </div>
+      <div id="no-book">
+        <p>There Is No Book. Press "+" Button To Create One!</p>
       </div>
       <div class="list" id="list"></div>
     </div>
