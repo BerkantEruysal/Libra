@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <header><p>LIBRA</p></header>
+    <div class="unvisible" id="form-visibility">
+      <div id="form-template">
+        <form action="" id="new-book-form">
+          <input
+            type="button"
+            value="X"
+            id="close-form-button"
+            onclick="closeForm()"
+          />
+          <label for="title-input" class="title-label">Title:</label>
+          <input type="text" id="title-input" name="title-input" />
+          <label for="author-input" class="author-label">Author:</label>
+          <input type="text" id="author-input" name="author-input" />
+          <label for="pages-input" class="pages-label">Total Pages:</label>
+          <input type="text" id="pages-input" name="pages-input" />
+          <label for="is-read-input" class="is-read-label">Finished ? </label>
+          <input type="checkbox" id="is-read-input" name="is-read-input" />
+          <button
+            id="create-button"
+            onclick=" return submitBookForm()"
+            type="button"
+          >
+            Create Book
+          </button>
+        </form>
+      </div>
+    </div>
+
+    <div class="wrapper">
+      <button
+        onclick="createBookForm()"
+        type="button"
+        class="create-book-form-button"
+      >
+        <p>+</p>
+      </button>
+      <div class="tables">
+        <p> </p>
+        <p>Title</p>
+        <p>Author</p>
+        <p>Pages</p>
+        <p>Status</p>
+      </div>
+      <div class="list" id="list"></div>
+    </div>
+
+    <script src="./index.js"></script>
+  </body>
+</html>

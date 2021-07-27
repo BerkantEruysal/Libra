@@ -1,0 +1,145 @@
+@import url('https://fonts.googleapis.com/css2?family=Zen+Tokyo+Zoo&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body{
+    background-color: rgb(17, 2, 27);
+}
+.visible {
+   
+}
+.unvisible {
+ display: none;
+}
+.remove-effect {
+  opacity: 0;
+}
+header{
+text-align: center;
+font-family: 'Zen Tokyo Zoo', cursive;
+font-size: 50px;
+font-weight: 550;
+background-color: rgb(27, 3, 43);
+color:rgb(28, 224, 182);
+position: fixed;
+width: 100%;
+box-shadow:         3px 3px 5px 6px rgb(27, 3, 43);
+
+}
+ul{
+    margin-top: 20px;
+  list-style-type: none;  
+  display: flex;
+  justify-content: space-around;
+}
+.book {
+    height: 50px;
+  color: white;
+  margin: 20px;
+  transition: opacity 0.5s 0s;
+  font-family: 'Roboto', sans-serif;
+  font-size: 15px;
+}
+.book-delete-button{
+    border : none;
+    font-size: 15px;
+    font-weight:  700;
+    width: 50px;
+    height: 30px;
+    background-color: rgb(32, 32, 32);
+    color: rgb(83, 4, 4);
+}
+.wrapper {
+    
+    padding-top: 100px ;
+  width: 1000px;
+  height: 100vh;
+  margin: auto;
+  background-color: rgb(55, 8, 87);
+}
+
+.create-book-form-button{
+    display: block;
+    font-size: 50px;
+    width: 120px;
+    height: 50px;
+    border: none;
+    background-color: rgb(7, 15, 32);
+    color: rgb(28, 224, 182);  
+    transition: 0.5s;
+}
+.create-book-form-button:hover {
+    background-color: rgb(23, 6, 29);
+    
+}
+
+.create-book-form-button p{
+    transition: 0.5s;
+    
+    
+}
+.create-book-form-button:hover p{
+    transform: scale(1.2);
+    
+    
+}
+.tables{
+    display: flex;
+    justify-content: space-around;
+    color: white;
+    font-family: 'Roboto', sans-serif;
+    font-size: 20px;
+    padding-bottom: 5px ;
+    border-bottom: 1px solid black;
+}
+.list {
+ 
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+#form-template {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(128, 128, 128, 0.315);
+}
+
+#new-book-form {
+  width: 200px;
+  height: 200px;
+  margin: 300px auto;
+  position: relative;
+  background-color: indianred;
+}
+#title-input {
+}
+#author-input {
+  
+}
+#pages-input {
+  
+}
+#is-read-input {
+}
+#create-button {
+  
+}
+
+#close-form-button {
+  float: right;
+}
+.title-label {
+  
+}
+.author-label {
+  
+}
+.pages-label {
+  
+}
+.is-read-label {
+}
