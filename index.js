@@ -28,14 +28,14 @@ function initBook(bookObject) {
   isRead.className = "book-is-read";
   
   trashCanIcon.src = "icons8-trash-24.png"
-  title.innerHTML = `Title:  ${bookObject.title}`;
-  author.innerHTML = `Author: ${bookObject.author}`;
-  pages.innerHTML = `Pages: ${bookObject.pages}`;
+  title.innerHTML = `${bookObject.title}`;
+  author.innerHTML = `${bookObject.author}`;
+  pages.innerHTML = `${bookObject.pages}`;
   isRead.innerHTML = `${
     bookObject.read ? "The book is finished" : "Not finished yet"
   }`;
 
-  book.addEventListener("transitionend", () => {
+  book.addEventListener("transitionend", (event) => {
     book.remove();
     myLibrary.splice(bookObject.id, 1);
     saveList();

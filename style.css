@@ -5,6 +5,8 @@
   padding: 0;
 }
 
+
+
 body{
     background-color: rgb(17, 2, 27);
 }
@@ -32,8 +34,8 @@ box-shadow:         3px 3px 5px 6px rgb(27, 3, 43);
 ul{
     margin-top: 20px;
   list-style-type: none;  
-  display: flex;
-  justify-content: space-around;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
 }
 .book {
     height: 50px;
@@ -51,6 +53,9 @@ ul{
     height: 30px;
     background-color: rgb(32, 32, 32);
     color: rgb(83, 4, 4);
+}
+.book-delete-button:hover{
+  background-color: rgb(37, 83, 52);
 }
 .wrapper {
     
@@ -87,8 +92,8 @@ ul{
     
 }
 .tables{
-    display: flex;
-    justify-content: space-around;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
     color: white;
     font-family: 'Roboto', sans-serif;
     font-size: 20px;
@@ -103,17 +108,31 @@ ul{
 
 #form-template {
   position: absolute;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(128, 128, 128, 0.315);
+  width: 100vw;
+  min-height: 150vh;
+  background-color: rgba(0, 0, 0, 0.548);
 }
 
 #new-book-form {
-  width: 200px;
-  height: 200px;
-  margin: 300px auto;
+  display: grid;
+  grid-template-columns: 1fr;
+  width: 500px;
+  height: 400px;
+  margin: 200px auto;
   position: relative;
-  background-color: indianred;
+  background-color: rgb(109, 85, 104);
+  font-family: 'Roboto', sans-serif;
+  color: aliceblue;
+  border-radius: 3px;
+  position: relative;
+  
+}
+.input{
+  width: 280px;
+  margin: 0 auto;
+  border-radius: 5px;
+  border-style: none;
+  padding-left: 5px;
 }
 #title-input {
 }
@@ -124,13 +143,39 @@ ul{
   
 }
 #is-read-input {
+  position: relative;
+  content: url("./unchecked.png");
+  width: 40px;
+  height: 40px;
+
 }
+#is-read-input:checked{
+  content: url("./checked.png");
+}
+
 #create-button {
-  
+  transition: 0.5s;
+  border: none;
+}
+#create-button:hover{
+  background-color: rgb(136, 135, 135);
 }
 
 #close-form-button {
-  float: right;
+  position: absolute;
+  right: 0;
+  width: 10%;
+  height: 10%;
+  border: none;
+  background-color: brown;
+}
+#close-form-button:hover{
+  background-color: rgb(255, 164, 164);
+  
+}
+.label{
+  margin: auto;
+
 }
 .title-label {
   
@@ -142,4 +187,32 @@ ul{
   
 }
 .is-read-label {
+}
+
+@media screen and (max-width: 1000px) {
+  .wrapper{
+    width: 100%;
+  }
+  .create-book-form-button{
+    margin: 0 auto 25px auto;
+  }
+ 
+}
+
+@media screen and (max-width: 600px) {
+  .create-book-form-button{
+    position: fixed;
+    bottom: 0;
+    margin: 0;
+    width: 100%;
+    
+
+  }
+  #new-book-form{
+    width: 100%;
+    margin-top: 100px;
+  }
+  .input{
+    width: 80%;
+  }
 }
