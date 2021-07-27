@@ -10,7 +10,7 @@ function addBookToLibrary(title, author, pages, read) {
   if(!myLibrary){myLibrary = []}
   myLibrary.push(newBook);
 }
-function showBookInScreen(bookObject) {
+function initBook(bookObject) {
   const book = document.createElement("div");
   const deleteButton = document.createElement("button");
   const ul = document.createElement("ul");
@@ -82,7 +82,7 @@ function refreshList() {
   document.getElementById("list").innerHTML = "";
   if (myLibrary) {
     myLibrary.forEach((book) => {
-      showBookInScreen(book);
+      initBook(book);
     });
   }
 }
